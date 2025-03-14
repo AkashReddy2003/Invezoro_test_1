@@ -28,7 +28,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-white" id="testimonials">
+    <section  className="py-24 bg-white" id="testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,6 +46,7 @@ const Testimonials = () => {
         </motion.div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}

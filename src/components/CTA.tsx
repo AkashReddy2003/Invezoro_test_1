@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const CTA = () => {
+  const navigate=useNavigate();
   return (
     <section className="py-24 bg-indigo-600" id="cta">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +31,7 @@ const CTA = () => {
           className="mt-12 flex flex-col items-center gap-8"
         >
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-300 flex items-center justify-center gap-2">
+            <button onClick={()=>navigate("/courses")} className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-300 flex items-center justify-center gap-2">
               Enroll Now
               <ArrowRight className="w-5 h-5" />
             </button>
@@ -39,7 +41,7 @@ const CTA = () => {
           </div>
           
           <p className="text-indigo-100">
-            Have questions? Call us at +1 (555) 123-4567
+            Have questions? Call us at +91 9392334067
           </p>
         </motion.div>
       </div>

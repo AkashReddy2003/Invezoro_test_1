@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-
+import TechGaints from '../components/TechGaints'
 const Hero = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
@@ -51,12 +51,9 @@ const Hero = () => {
           <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
             Trusted by leading companies worldwide
           </p>
-          <div className="mt-8 flex justify-center gap-x-8 lg:gap-x-12 grayscale opacity-60">
-            {/* Replace with actual company logos */}
-            <img className="h-12" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=48&fit=crop&auto=format" alt="Company 1" />
-            <img className="h-12" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=48&fit=crop&auto=format" alt="Company 2" />
-            <img className="h-12" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=48&fit=crop&auto=format" alt="Company 3" />
-          </div>
+         
+          <TechGaints/>
+          
         </motion.div>
       </div>
     </div>

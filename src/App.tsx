@@ -11,11 +11,12 @@ import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CoursesPage from './pages/CoursesPage';
-
+import About from './pages/About';
 function HomePage() {
   return (
     <>
       <Hero />
+     
       <WhyChooseUs />
       <Courses />
       <Testimonials />
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/about" element={<About/>} />
         </Routes>
         <Footer />
       </div>

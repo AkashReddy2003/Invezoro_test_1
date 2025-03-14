@@ -18,10 +18,10 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a href="https://in.linkedin.com/company/invezoro?trk=public_jobs_topcard-org-name" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <a href="https://www.instagram.com/invezoro/" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -30,8 +30,8 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Courses</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+              <li><a href="/courses" className="text-gray-400 hover:text-white transition-colors duration-300">Courses</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Success Stories</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
             </ul>
@@ -50,10 +50,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>1234 Tech Street</li>
-              <li>San Francisco, CA 94105</li>
-              <li>contact@invezoro.com</li>
-              <li>+1 (555) 123-4567</li>
+              <li>Kamkole, Sadasivpet, Hyderabad, </li>
+              <li>Telangana 502345</li>
+              <li>invezoro@gmail.com</li>
+              <li>+91 9392334067</li>
             </ul>
           </div>
         </div>

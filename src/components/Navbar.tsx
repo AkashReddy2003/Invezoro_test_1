@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-
+import { Context } from '../context/Context';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
+  const {open,setOpen,user,logout}=useContext(Context);
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Programs', href: '/programs' },
+    { name: 'Programs', href: '#courses' },
     { name: 'Courses', href: '/courses' },
-    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Testimonials', href: '#testimonials' },
     { name: 'About Us', href: '/about' },
   ];
 
   const isActive = (path: string) => {
-    if (path.startsWith('/#')) {
+    if (path.startsWith('#')) {
       return location.hash === path.substring(1);
     }
     return location.pathname === path;
@@ -34,9 +34,9 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`${
                   isActive(item.href)
                     ? 'text-indigo-600'
@@ -44,11 +44,18 @@ const Navbar = () => {
                 } px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 {item.name}
-              </Link>
+              </a>
             ))}
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
-              Get Started
-            </button>
+            {!user.email?
+          <button onClick={()=>setOpen(true)} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
+          Get Started
+        </button>:
+        <button onClick={()=>logout()} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
+        Logout
+      </button>  
+          
+          }
+            
           </div>
 
           {/* Mobile menu button */}
@@ -82,9 +89,15 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <button className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-500 transition-colors duration-200">
-                Get Started
-              </button>
+              {!user.email?
+             <button onClick={()=>setOpen(true)} className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-500 transition-colors duration-200">
+           Get Started
+             </button>:
+              <button onClick={()=>logout()} className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-500 transition-colors duration-200">
+             Logout
+              </button>  
+            }
+             
             </div>
           </div>
         </div>

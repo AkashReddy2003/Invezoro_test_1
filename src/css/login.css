@@ -1,0 +1,178 @@
+
+@media screen and (min-width: 600px) {
+    
+.login{
+    width: 60vw;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    align-self: center;
+    position: absolute;
+    top: 10vh;
+    left: 20vw;
+    
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+.login-left{
+    width: 40%;
+    height: 80vh;
+    padding: 20px;
+}
+.login-right{
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+    
+}
+
+.login-right h1{
+    font-family: "Rubik", serif;
+  font-size: 2.0rem;
+  font-weight: 500;
+  color: #093672;
+}
+.login-right-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-right-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-right-form p{
+    font-family: "Montserrat", serif;
+}
+
+.login-right-form-input{
+    margin-top: 20px;
+    width: 80%;
+    border: none;
+    background-color: white;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    height: 30px;
+    padding: 20px;
+}
+
+.login-right-form-hover:hover{
+    scale: 1.1;
+    
+}
+
+.login-right-form-button{
+    margin-top: 20px !important;
+    width: 70%;
+    background-color: #093672 !important;
+}
+
+.login-right-form-button p{
+    font-family: "Rubik", serif;
+  font-size: 1.0rem;
+}
+}
+
+@media screen and (max-width: 600px) {
+
+    .login{
+        width: 90vw;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        align-self: center;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        
+        
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+    }
+    
+    .login-left{
+        width: 40%;
+        height: 80vh;
+        padding: 20px;
+        display: none;
+        
+    }
+    .login-right{
+        width: 100%;
+        max-height: 90vh;
+        padding: 20px;
+        overflow: scroll;
+        
+        
+    }
+    
+    .login-right h1{
+        font-family: "Rubik", serif;
+      font-size: 2.0rem;
+      font-weight: 500;
+      color: #093672;
+    }
+    .login-right-heading{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .login-right-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .login-right-form p{
+        font-family: "Montserrat", serif;
+    }
+    
+    .login-right-form-input{
+        margin-top: 20px;
+        width: 80%;
+        border: none;
+        background-color: white;
+        box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+        height: 30px;
+        padding: 20px;
+    }
+    
+    .login-right-form-hover:hover{
+        scale: 1.1;
+        
+    }
+    
+    .login-right-form-button{
+        margin-top: 20px !important;
+        width: 70%;
+        background-color: #093672 !important;
+    }
+    
+    .login-right-form-button p{
+        font-family: "Rubik", serif;
+      font-size: 1.0rem;
+    }
+
+}
