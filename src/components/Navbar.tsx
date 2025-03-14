@@ -1,14 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Context } from '../context/Context';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate=useNavigate();
   const {open,setOpen,user,logout}=useContext(Context);
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Programs', href: '#courses' },
+    { name: 'Programs', href: '#programs' },
     { name: 'Courses', href: '/courses' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'About Us', href: '/about' },
@@ -35,8 +36,10 @@ const Navbar = () => {
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navigation.map((item) => (
               <a
+              onClick={()=>item.name=="Programs"||item.name=="Testimonials"?navigate("/"):""}
                 key={item.name}
                 href={item.href}
+                
                 className={`${
                   isActive(item.href)
                     ? 'text-indigo-600'
@@ -75,19 +78,20 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
-              <Link
+              <a
+                onClick={()=>item.name=="Programs"||item.name=="Testimonials"?navigate("/"):""}
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`${
                   isActive(item.href)
                     ? 'text-indigo-600 bg-indigo-50'
                     : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50'
                 } block px-3 py-2 text-base font-medium transition-colors duration-200`}
-                onClick={() => setIsOpen(false)}
-              >
-                <a href={item.name=="Programs"?"#courses":""}>{item.name}</a>
                 
-              </Link>
+              >
+                {item.name}
+                
+              </a>
             ))}
             <div className="px-3 py-2">
               {!user.email?
