@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Star, Clock, Award } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const courses = [
   {
@@ -30,9 +31,10 @@ const courses = [
 ];
 
 const Courses = () => {
+  const navigate=useNavigate();
   return (
-    <section className="py-24 bg-gray-50" id="courses">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gray-50" >
+      <div id="courses" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +96,7 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <button className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 transition-colors duration-300">
+                <button onClick={()=>navigate("/courses")} className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 transition-colors duration-300">
                   Learn More
                 </button>
               </div>

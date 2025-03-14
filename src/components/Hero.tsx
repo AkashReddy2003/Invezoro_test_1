@@ -34,7 +34,7 @@ const Hero = () => {
           className="mt-10 flex items-center justify-center gap-x-6"
         >
           <a
-            href="#courses"
+            href="/courses"
             className="rounded-md bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-300 flex items-center gap-2"
           >
             Explore Courses

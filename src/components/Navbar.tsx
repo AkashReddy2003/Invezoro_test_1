@@ -85,7 +85,8 @@ const Navbar = () => {
                 } block px-3 py-2 text-base font-medium transition-colors duration-200`}
                 onClick={() => setIsOpen(false)}
               >
-                {item.name}
+                <a href={item.name=="Programs"?"#courses":""}>{item.name}</a>
+                
               </Link>
             ))}
             <div className="px-3 py-2">
