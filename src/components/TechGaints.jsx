@@ -21,16 +21,15 @@ const imageList = Object.values(images);
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-20 text-center"
+          className="mt-20 text-center flex flex-col items-center"
+          
         >
           <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide">
           Secure Placements with Top Brands
           </p>
          
-          <div className='prof' id="courses">
-            <div className="prof-text">
-              
-            </div>
+          <div className='prof' id="courses" style={{width: "80vw", backgroundColor:"#FFF2E1", borderRadius: "50px"}}>
+           
             <Swiper className="prof-swiper" modules={[Pagination, Autoplay]}
                 slidesPerView={window.screen.width > 700 ? 6 : 2}
                 autoplay={{

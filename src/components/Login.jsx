@@ -23,7 +23,7 @@ export default function Login() {
         }
     }
   return (
-    <div className='login'>
+    <div className='login' >
      <div className='login-left'>
         <img src={stu} style={{height:"100%",borderRadius: 30,}}/>
         </div> 
@@ -33,7 +33,7 @@ export default function Login() {
                
 
             </div>
-            <div className='login-right-form'>
+            <div className='login-right-form' style={{maxHeight: 500,}}>
                 <h1 style={{fontSize:"1.5rem",width:"100%"}}>Let the Journey Begin!</h1>
                 <p style={{fontSize:"1rem",width:"100%",marginTop:10}}>Unlock a world of education with a single click! Please login in to your account.</p>
                 {title=="Login"?<>

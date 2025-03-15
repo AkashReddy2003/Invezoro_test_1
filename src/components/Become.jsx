@@ -44,7 +44,7 @@ const Become = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16  gap-8 justify-end sm:invisible md:invisible lg:visible xl:visible xs:invisible"
+          className="  gap-8 justify-end sm:invisible md:invisible lg:visible xl:visible xs:invisible"
           
         >
           <img src={ins}  className=''/>

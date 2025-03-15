@@ -286,9 +286,7 @@ const ContextProvider = ({ children }) => {
             {children}
             <Modal
         open={open}
-        onClose={()=>setOpen(false)}
-        
-      >
+        onClose={()=>setOpen(false)}>
         <Login/>
       </Modal>
       <Modal

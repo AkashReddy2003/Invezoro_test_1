@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate=useNavigate();
   const {open,setOpen,user,logout}=useContext(Context);
   const navigation = [
-    { name: 'Home', href: '/' },
+    
     { name: 'Programs', href: '#programs' },
     { name: 'Courses', href: '/courses' },
     { name: 'Testimonials', href: '#testimonials' },
@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img src={logo} style={{width: 150,}}/>
@@ -51,10 +51,10 @@ const Navbar = () => {
               </a>
             ))}
             {!user.email?
-          <button onClick={()=>setOpen(true)} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
-          Get Started
+          <button onClick={()=>setOpen(true)} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200 absolute right-10">
+          Login / Register
         </button>:
-        <button onClick={()=>logout()} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
+        <button onClick={()=>logout()} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200 absolute right-10">
         Logout
       </button>  
           

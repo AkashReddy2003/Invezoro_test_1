@@ -22,9 +22,10 @@ function HomePage() {
       <WhyChooseUs />
       <Courses />
       <Testimonials />
-      <Become/>
+      
       <Partners />
       <HowItWorks />
+      <Become/>
       <FAQ />
       <CTA />
     </>
