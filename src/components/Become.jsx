@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2 } from 'lucide-react';
-import ins from "../assets/instructor.png"
+import ins from "../assets/Instructor.png"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Become = () => {
   return (
