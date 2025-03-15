@@ -5,8 +5,8 @@ import ins from "../assets/Instructor.png"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Become = () => {
   return (
-    <section className="py-10 bg-amber-500" id="partners" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 flex flex-row items-center">
+    <section className="py-10 flex flex-row items-center" id="partners" >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-row items-center  bg-amber-500 p-10  shadow-lg rounded-lg">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

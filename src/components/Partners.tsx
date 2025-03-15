@@ -17,7 +17,7 @@ const Partners = () => {
             Top Companies Are Hiring Invezoro Graduates!
           </h2>
           <div className="mt-4 flex items-center justify-center gap-2">
-            <Building2 className="w-6 h-6 text-amber-500" />
+            
             <p className="text-xl text-gray-600">
             30+ Companies Partnered with Us (And Counting!)
 
@@ -43,17 +43,17 @@ const Partners = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-amber-500">1000+</h3>
+            <h3 className="text-4xl font-bold text-black">1000+</h3>
             <p className="mt-2 text-gray-600">Successful Graduates in Leading Tech Companies
             </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-amber-500">Up to ₹12L</h3>
+            <h3 className="text-4xl font-bold text-black">Up to ₹12L</h3>
             <p className="mt-2 text-gray-600">Annual Packages (for top performers)
             </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-amber-500">80%+ 
+            <h3 className="text-4xl font-bold text-black">80%+ 
             </h3>
             <p className="mt-2 text-gray-600">Success Rate in Job & Internship Placements</p>
           </div>

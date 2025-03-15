@@ -56,8 +56,8 @@ const Hero = () => {
           </a>
         </motion.div>
           </div>
-          {window.screen.width>700?<div className='lg:w-6/12 absolute ' style={{right:-100,bottom:-140}}>
-            <img src={hero} style={{height:"80vh"}}/>
+          {window.screen.width>700?<div className='lg:w-6/12 relative' style={{height:"80vh"}}>
+            <img src={hero} className='absolute' style={{height:"80vh",right:-60,bottom:70,objectFit:"contain"}}/>
           </div>:""}
           
        

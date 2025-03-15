@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16">
+        <div className="flex md:justify-space-between sm:justify-space-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img src={logo} style={{width: 150,}}/>
