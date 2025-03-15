@@ -10,7 +10,8 @@ interface TrackCardProps {
   icon: LucideIcon;
   backgroundImage: string;
   isSelected?: boolean;
-  image:string
+  image:string,
+  price:string,
   onClick?: () => void;
 }
 
@@ -24,6 +25,7 @@ const TrackCard: React.FC<TrackCardProps> = ({
   backgroundImage,
   isSelected,
   image,
+  price,
   onClick
 }) => {
   return (
@@ -80,8 +82,11 @@ const TrackCard: React.FC<TrackCardProps> = ({
           <div className="ml-4">
             <h3 className="text-2xl font-bold text-black">{title}</h3>
             <p className="text-black">{subtitle}</p>
+            
           </div>
+          
         </div>
+        
         
         {/* Level Badge */}
         <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-500 ${
@@ -95,6 +100,8 @@ const TrackCard: React.FC<TrackCardProps> = ({
         {/* Features and Benefits */}
         <div className="space-y-6">
           <div className="transform transition-all duration-500">
+            {price?<h3 className="text-3xl font-bold text-black mb-5">{price}</h3>:""}
+          
             <h4 className="text-lg font-semibold text-black mb-3">Core Features</h4>
             <ul className="space-y-3">
               {features.map((feature, index) => (
@@ -130,15 +137,18 @@ const TrackCard: React.FC<TrackCardProps> = ({
         </div>
 
         {/* Action Button */}
+        {price?"":
         <button 
-          className={`mt-8 w-full py-3 px-6 rounded-lg font-medium transition-all duration-500 ${
-            isSelected 
-              ? 'bg-indigo-700 text-white shadow-lg shadow-indigo-700/20 transform scale-105' 
-              : 'bg-indigo-800 text-violet-200 hover:bg-indigo-700 hover:text-white hover:shadow-lg hover:shadow-indigo-700/20'
-          }`}
-        >
-          Explore Track
-        </button>
+        className={`mt-8 w-full py-3 px-6 rounded-lg font-medium transition-all duration-500 ${
+          isSelected 
+            ? 'bg-indigo-700 text-white shadow-lg shadow-indigo-700/20 transform scale-105' 
+            : 'bg-indigo-800 text-violet-200 hover:bg-indigo-700 hover:text-white hover:shadow-lg hover:shadow-indigo-700/20'
+        }`}
+      >
+        Explore Track
+      </button>
+        }
+        
       </div>
     </div>
   );

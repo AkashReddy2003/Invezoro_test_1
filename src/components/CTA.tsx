@@ -7,7 +7,7 @@ const CTA = () => {
   const navigate=useNavigate();
   return (
     <section className="py-24 flex justify-center items-center " id="cta">
-      <div className="max-w-7xl mx-auto px-4 bg-amber-500 shadow-lg rounded-lg sm:px-4 lg:px-8 lg:flex lg:flex-row ml-10 mr-10 lg:ml-0 lg:mr-0">
+      <div className="max-w-7xl mx-auto px-4 bg-indigo-800 shadow-lg rounded-lg sm:px-4 lg:px-8 lg:flex lg:flex-row ml-10 mr-10 lg:ml-0 lg:mr-0">
       <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

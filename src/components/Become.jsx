@@ -5,8 +5,8 @@ import ins from "../assets/Instructor.png"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const Become = () => {
   return (
-    <section className="py-10 flex flex-row items-center" id="partners" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-row items-center  bg-amber-500 p-10  shadow-lg rounded-lg">
+    <section className="py-10 flex flex-row items-center justify-center " id="partners" >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-row items-center  bg-indigo-800 p-10  shadow-lg rounded-lg ml-10 mr-10 lg:ml-0 lg:mr-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ const Become = () => {
 
             </p>
             <button className="p-5 bg-white rounded-lg shadow-sm mt-5 ">
-            <h3 className="text-lg font-bold text-amber-500 text-left be-vietnam-pro-semibold">Become an Instructor <ArrowForwardIcon/></h3>
+            <h3 className="text-lg font-bold text-indigo-800 text-left be-vietnam-pro-semibold">Become an Instructor <ArrowForwardIcon/></h3>
            
             
           </button>

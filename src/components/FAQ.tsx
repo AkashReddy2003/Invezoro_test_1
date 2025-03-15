@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: 'How long does it take to complete a course?',
-    answer: 'Course duration varies from 3-6 months depending on the track and specialization you choose. You can learn at your own pace with lifetime access to course materials.'
+    answer: 'Course duration varies from 2-3 months depending on the track and specialization you choose. You can learn at your own pace with lifetime access to course materials.'
   },
   {
     question: 'Do you provide job placement support?',
@@ -17,11 +17,31 @@ const faqs = [
   },
   {
     question: 'Are the certifications industry-recognized?',
-    answer: 'Yes, our certifications are recognized by leading tech companies and validated by industry experts.'
+    answer: 'Yes, we provide comprehensive job placement support including resume building, interview preparation, and direct connections with hiring partners.'
   },
   {
     question: 'What is the learning format?',
     answer: 'Our courses combine live online classes, recorded sessions, hands-on projects, and 1:1 mentorship for a comprehensive learning experience.'
+  },
+  {
+    question: 'Do you offer scholarships or financial aid?',
+    answer: ' We believe in making education accessible. We offer scholarships and financial aid for deserving students, especially those from underprivileged backgrounds. Reach out to us to learn more!'
+  },
+  {
+    question: 'What if I miss a live session?',
+    answer: 'No worries! All live sessions are recorded and available for you to watch later. You’ll never miss out on learning.'
+  },
+  {
+    question: 'Do you provide freelancing opportunities?',
+    answer: ' Yes! We connect you with paid freelance gigs and part-time projects so you can earn while you learn. Our platform also helps you build a freelancing portfolio to attract more clients.'
+  },
+  {
+    question: 'What is the refund policy?',
+    answer: 'Our courses are crafted with care and commitment, and as such, we do not offer refunds. We believe in the value and quality of our educational services!'
+  },
+  {
+    question: 'Is there a community or peer learning platform?',
+    answer: 'Yes! Join our vibrant community to collaborate, network and participate in events like hackathons and webinars.'
   }
 ];
 

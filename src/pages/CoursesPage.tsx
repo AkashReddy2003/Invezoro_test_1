@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Users, Clock, Trophy, CheckCircle2, GraduationCap, Building2, ArrowRight,Lightbulb, Target,CheckCircle ,BookOpen} from 'lucide-react';
 import { Context } from '../context/Context';
@@ -24,6 +24,10 @@ import f from "../assets/courses/data.webp"
 import g from "../assets/courses/cloud.webp"
 import h from "../assets/courses/block.webp"
 import i from "../assets/courses/iot.webp"
+import { useLocation } from 'react-router-dom';
+import Courses from '../components/Courses';
+import Courses_copy from '../components/Courses_copy';
+import FAQ from '../components/FAQ';
 
 
 
@@ -63,7 +67,7 @@ const tracks = [
   },
 ];
 
-const courses = [
+export const courses = [
   {
     "id": "data-analytics",
     "title": "Data Analytics",
@@ -1434,10 +1438,15 @@ const courses = [
 ];
 
 const CoursesPage = () => {
-  const [selectedCourse, setSelectedCourse] = useState(courses[0]);
+  const location=useLocation();
+  const course=location.state.course;
+  const [selectedCourse, setSelectedCourse] = useState(course?course:courses[0]);
   const [selectedTrack, setSelectedTrack] = useState(tracks[0]);
   const {handleRazorpayScreen}=useContext(Context);
   const [selectedLevel, setSelectedLevel] = useState('foundation');
+  useEffect(()=>{
+    setSelectedCourse(location.state.course)
+  },[location.state.course])
   const calculatePrice=(track)=>{
     if(track=="Foundation"){
         return 4999;
@@ -1471,32 +1480,7 @@ const calculatewoPrice=(track)=>{
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Track Selection */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Available Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {courses.map((course) => (
-              <motion.div
-                key={course.id}
-                whileHover={{ scale: 1.02 }}
-                className={`p-6 rounded-xl cursor-pointer transition-all duration-200 ${
-                  selectedCourse.id === course.id
-                    ? 'bg-indigo-800 text-white'
-                    : 'bg-white text-gray-900 hover:shadow-lg'
-                }`}
-                onClick={() => {setSelectedCourse(course);window.location.href="#maincourse"}}
-                
-              >
-                <img className='p-1 rounded-xl transition-all duration-200' style={{marginBottom: 10,}} src={course.image}/>
-                <h3 className="text-xl font-semibold">{course.title}</h3>
-                <p className={`mt-2 ${
-                  selectedCourse.id === course.id ? 'text-indigo-100' : 'text-gray-600'
-                }`}>
-                  {course.description[selectedTrack.name]}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        
 
         {/* Course Selection */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
@@ -1522,7 +1506,7 @@ const calculatewoPrice=(track)=>{
         
 
         {/* Program Details Section */}
-        <div className="mb-16">
+        <div className="mb-5">
           <div className="bg-white rounded-xl  p-0">
             <div className="flex justify-center mb-12">
               <div className="inline-flex rounded-lg bg-gray-100 p-1">
@@ -1530,6 +1514,7 @@ const calculatewoPrice=(track)=>{
                   <button
                     key={level.name}
                     onClick={() => {setSelectedTrack(level)}}
+                    style={{width: window.screen.width>700?200:100,}}
                     className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedTrack === level
                         ? 'bg-white shadow-md text-indigo-600'
@@ -1582,6 +1567,15 @@ const calculatewoPrice=(track)=>{
         </div>
         </div>
         </div>
+        <div className='flex flex-row justify-center'>
+        <button style={{margin:10,width:window.screen.width>700?300:200}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
+              Enroll now
+            </button>
+            <button style={{margin:10,width:window.screen.width>700?300:200}}   className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
+              Enquire
+            </button>
+        </div>
+        
 
               {/* Skills */}
               <div className="mb-8">
@@ -1597,9 +1591,7 @@ const calculatewoPrice=(track)=>{
                   ))}
                 </div>
               </div>
-              <button style={{margin:10}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
-              Enroll now
-            </button>
+             
               {/* Market Stats */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gray-50 p-6 rounded-xl">
@@ -1705,6 +1697,8 @@ const calculatewoPrice=(track)=>{
           </div>
         </div>
       </div>
+      <Courses_copy/>
+      <FAQ/>
     </div>
   );
 };
