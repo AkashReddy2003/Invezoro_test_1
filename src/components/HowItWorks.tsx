@@ -56,7 +56,7 @@ const HowItWorks = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="relative flex flex-col items-center"
               >
-                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-indigo-600 text-white relative z-10">
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-amber-500 text-white relative z-10">
                   {step.icon}
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-gray-900">{step.title}</h3>

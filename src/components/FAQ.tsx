@@ -29,14 +29,13 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-gray-50" id="faq">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+    <section className="py-15 lg:py-24 bg-gray-50 lg:flex lg:flex-row" id="faq">
+      <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className=" text-center lg:text-left px-10 lg:ml-10 lg:w-5/12"
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Got Questions? We've Got Answers!
@@ -45,8 +44,10 @@ const FAQ = () => {
             Find answers to commonly asked questions about our courses and platform
           </p>
         </motion.div>
+      <div className="lg:w-6/12  px-4 sm:px-6 lg:px-6">
+        
 
-        <div className="mt-16 max-w-3xl mx-auto">
+        <div className="mt-0 w-3xl ">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}

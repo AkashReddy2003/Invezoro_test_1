@@ -17,9 +17,10 @@ const Partners = () => {
             Top Companies Are Hiring Invezoro Graduates!
           </h2>
           <div className="mt-4 flex items-center justify-center gap-2">
-            <Building2 className="w-6 h-6 text-indigo-600" />
+            <Building2 className="w-6 h-6 text-amber-500" />
             <p className="text-xl text-gray-600">
-              Join our network of 500+ successful placements
+            30+ Companies Partnered with Us (And Counting!)
+
             </p>
           </div>
         </motion.div>
@@ -31,20 +32,7 @@ const Partners = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-16"
         >
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-            {[...Array(6)].map((_, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <img
-                  src={`https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=48&fit=crop&auto=format`}
-                  alt={`Partner ${index + 1}`}
-                  className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
+          
         </motion.div>
 
         <motion.div
@@ -55,16 +43,19 @@ const Partners = () => {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-indigo-600">500+</h3>
-            <p className="mt-2 text-gray-600">Successful Placements</p>
+            <h3 className="text-4xl font-bold text-amber-500">1000+</h3>
+            <p className="mt-2 text-gray-600">Successful Graduates in Leading Tech Companies
+            </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-indigo-600">₹12L</h3>
-            <p className="mt-2 text-gray-600">Average Package</p>
+            <h3 className="text-4xl font-bold text-amber-500">Up to ₹12L</h3>
+            <p className="mt-2 text-gray-600">Annual Packages (for top performers)
+            </p>
           </div>
           <div className="p-6 bg-white rounded-lg shadow-sm">
-            <h3 className="text-4xl font-bold text-indigo-600">92%</h3>
-            <p className="mt-2 text-gray-600">Placement Rate</p>
+            <h3 className="text-4xl font-bold text-amber-500">80%+ 
+            </h3>
+            <p className="mt-2 text-gray-600">Success Rate in Job & Internship Placements</p>
           </div>
         </motion.div>
       </div>

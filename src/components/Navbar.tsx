@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Context } from '../context/Context';
+import logo from "../assets/logo.png"
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -28,7 +29,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-indigo-600">Invezoro</span>
+              <img src={logo} style={{width: 150,}}/>
             </Link>
           </div>
 
@@ -42,18 +43,18 @@ const Navbar = () => {
                 
                 className={`${
                   isActive(item.href)
-                    ? 'text-indigo-600'
-                    : 'text-gray-700 hover:text-indigo-600'
+                    ? 'text-amber-500'
+                    : 'text-gray-700 hover:text-amber-500'
                 } px-3 py-2 text-sm font-medium transition-colors duration-200`}
               >
                 {item.name}
               </a>
             ))}
             {!user.email?
-          <button onClick={()=>setOpen(true)} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
+          <button onClick={()=>setOpen(true)} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
           Get Started
         </button>:
-        <button onClick={()=>logout()} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
+        <button onClick={()=>logout()} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200">
         Logout
       </button>  
           

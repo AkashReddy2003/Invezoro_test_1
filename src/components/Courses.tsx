@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Star, Clock, Award } from 'lucide-react';
+import { BookOpen, Star, Clock, Award,Lightbulb, Target, Trophy, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+const programDetails = {
+  foundation: {
+    icon: <Lightbulb className="h-8 w-8 text-blue-500" />,
+    title: "Foundation Level",
+    description: "Build a strong foundation in educational technology",
+    features: [
+      "Basic digital literacy skills",
+      "Introduction to educational software",
+      "Classroom technology integration basics",
+      "Fundamental online teaching methods"
+    ],
+    duration: "3 months",
+    price: "$499"
+  },
+  proficient: {
+    icon: <Target className="h-8 w-8 text-purple-500" />,
+    title: "Proficient Level",
+    description: "Advance your educational technology expertise",
+    features: [
+      "Advanced digital tool implementation",
+      "Data-driven instruction techniques",
+      "Blended learning strategies",
+      "Interactive content creation"
+    ],
+    duration: "6 months",
+    price: "$899"
+  },
+  mastery: {
+    icon: <Trophy className="h-8 w-8 text-yellow-500" />,
+    title: "Mastery Level",
+    description: "Become an educational technology leader",
+    features: [
+      "Educational technology leadership",
+      "Curriculum design and development",
+      "Advanced analytics and assessment",
+      "Technology integration coaching"
+    ],
+    duration: "12 months",
+    price: "$1,499"
+  }
+};
 const courses = [
   {
     title: 'Foundation Track',
@@ -32,15 +73,18 @@ const courses = [
 
 const Courses = () => {
   const navigate=useNavigate();
+
+  const [selectedLevel, setSelectedLevel] = useState('foundation');
   return (
     <section className="py-24 bg-gray-50" >
+      
       <div id="programs" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className=" text-center lg:text-left"
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Explore Our Expert-Led Courses
@@ -88,7 +132,7 @@ const Courses = () => {
                     {course.skills.map((skill, skillIndex) => (
                       <span 
                         key={skillIndex}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-500"
                       >
                         {skill}
                       </span>
@@ -96,7 +140,7 @@ const Courses = () => {
                   </div>
                 </div>
 
-                <button onClick={()=>navigate("/courses")} className="mt-6 w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 transition-colors duration-300">
+                <button onClick={()=>navigate("/courses")} className="mt-6 w-full bg-amber-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-500 transition-colors duration-300">
                   Learn More
                 </button>
               </div>

@@ -35,7 +35,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center"
+          className=" text-center lg:text-left"
         >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Learners, Their Success!
@@ -45,7 +45,7 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           
           {testimonials.map((testimonial, index) => (
             <motion.div

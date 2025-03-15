@@ -2,25 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
+import ment from "../assets/mentors.gif"
 const CTA = () => {
   const navigate=useNavigate();
   return (
-    <section className="py-24 bg-indigo-600" id="cta">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+    <section className="py-24 " id="cta">
+      <div className="max-w-7xl mx-auto px-4 bg-amber-500 shadow-lg rounded-lg sm:px-6 lg:px-8 flex flex-row">
+      <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileIn View={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-12 flex flex-col ml-10"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Start Your Learning Journey Today!
-          </h2>
-          <p className="mt-4 text-xl text-indigo-100">
-            Join thousands of successful graduates who transformed their careers with Invezoro
-          </p>
+          <div className="text-white w-6/12">
+            <h1 className='be-vietnam-pro-bold text-3xl'>Happy to help you!</h1>
+            <p className='be-vietnam-pro-regular text-xl mt-5'>Need more details? Our expert academic counsellors will be happy to patiently explain everything that you want to know.</p>
+            <button className="px-8 py-4 bg-black text-white rounded-lg font-semibold hover:bg-amber-600 transition-colors duration-300 flex items-center justify-center gap-2 mb-10 mt-5"> Speak to mentor</button>
+          </div>
+          
+          
         </motion.div>
 
         <motion.div
@@ -30,19 +31,7 @@ const CTA = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-12 flex flex-col items-center gap-8"
         >
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button onClick={()=>navigate("/courses")} className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-300 flex items-center justify-center gap-2">
-              Enroll Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="px-8 py-4 bg-indigo-500 text-white rounded-lg font-semibold hover:bg-indigo-400 transition-colors duration-300">
-              Talk to Our Team
-            </button>
-          </div>
-          
-          <p className="text-indigo-100">
-            Have questions? Call us at +91 9392334067
-          </p>
+          <img src={ment} />
         </motion.div>
       </div>
     </section>

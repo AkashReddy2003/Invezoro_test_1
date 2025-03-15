@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Users, Clock, Trophy, CheckCircle2, GraduationCap, Building2, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, Clock, Trophy, CheckCircle2, GraduationCap, Building2, ArrowRight,Lightbulb, Target,CheckCircle ,BookOpen} from 'lucide-react';
 import { Context } from '../context/Context';
 import py1 from "../assets/profs/madhav.png"
 import py2 from "../assets/profs/Sonali thakur.jpg"
@@ -15,11 +15,22 @@ import bloc1 from "../assets/profs/Samir Anil Jumade.jpg"
 import iot1 from "../assets/profs/Shyam Krishan.jpg"
 import iot2 from "../assets/profs/Vishal.jpg"
 
+import a from "../assets/courses/python.webp"
+import b from "../assets/courses/java.webp"
+import c from "../assets/courses/ai.webp"
+import d from "../assets/courses/web.webp"
+import e from "../assets/courses/cyber.webp"
+import f from "../assets/courses/data.webp"
+import g from "../assets/courses/cloud.webp"
+import h from "../assets/courses/block.webp"
+import i from "../assets/courses/iot.webp"
+
 
 
 const tracks = [
   {
     name: 'Foundation',
+    icon: <Lightbulb className="h-8 w-8 text-blue-500" />,
     description: 'Perfect for beginners starting their tech journey',
     duration: '3 months',
     price: 'Rs. 4999/-',
@@ -30,6 +41,7 @@ const tracks = [
   },
   {
     name: 'Proficient',
+    icon: <Target className="h-8 w-8 text-purple-500" />,
     description: 'For those with basic knowledge seeking to advance',
     duration: '4 months',
     price: 'Rs. 6999/-',
@@ -40,6 +52,7 @@ const tracks = [
   },
   {
     name: 'Master',
+    icon: <Trophy className="h-8 w-8 text-yellow-500" />,
     description: 'Advanced learning for experienced professionals',
     duration: '6 months',
     price: 'Rs. 9999/-',
@@ -59,7 +72,7 @@ const courses = [
       "Proficient": "Professionals with basic analytics skills looking to advance, including developers and business analysts.",
       "Master": "Experienced professionals aiming to specialize in advanced analytics and data science."
     },
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "image": f,
     "skills": {
       "Foundation": ["Fundamentals of Data Analytics", "Python for Data Analysis", "SQL Basics", "Data Cleaning", "Data Visualization"],
       "Proficient": ["Fundamentals of Data Analytics", "Python for Data Analysis", "SQL Basics", "Data Cleaning", "Data Visualization", "Advanced SQL", "Business Intelligence (Power BI/Tableau)", "Predictive Analytics", "Data Storytelling"],
@@ -257,7 +270,7 @@ const courses = [
       "Proficient": "Developers with basic AI/ML knowledge, professionals transitioning into AI roles, and those interested in deep learning.",
       "Master": "Experienced professionals specializing in AI research, engineers working on AI at scale, and business leaders leveraging AI for enterprises."
     },
-    "image": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=800&h=400&fit=crop",
+    "image": c,
     "skills": {
       "Foundation": ["Python", "Data Preprocessing", "Linear Algebra", "Machine Learning", "Data Visualization"],
       "Proficient": ["Python", "Data Preprocessing", "Linear Algebra", "Machine Learning", "Data Visualization", "Deep Learning", "NLP", "Model Deployment", "Reinforcement Learning"],
@@ -499,7 +512,7 @@ const courses = [
       "Proficient": "For IT professionals and developers specializing in DevOps and cloud automation.",
       "Master": "For experts aiming for Cloud Architect roles, multi-cloud expertise, and DevOps leadership."
     },
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "image":g,
     "skills": {
       "Foundation": [
         "Cloud Computing Fundamentals (AWS, Azure, GCP)",
@@ -762,7 +775,7 @@ const courses = [
       "Proficient": "For developers mastering full-stack development, databases, and APIs.",
       "Master": "For experienced developers specializing in scalable apps, DevOps, and CI/CD."
     },
-    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+    "image": d,
     "skills": {
       "Foundation": [
         "Basics of HTML, CSS & JavaScript",
@@ -1424,6 +1437,7 @@ const CoursesPage = () => {
   const [selectedCourse, setSelectedCourse] = useState(courses[0]);
   const [selectedTrack, setSelectedTrack] = useState(tracks[0]);
   const {handleRazorpayScreen}=useContext(Context);
+  const [selectedLevel, setSelectedLevel] = useState('foundation');
   const calculatePrice=(track)=>{
     if(track=="Foundation"){
         return 4999;
@@ -1457,25 +1471,22 @@ const calculatewoPrice=(track)=>{
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Track Selection */}
-        
-
-        {/* Course Selection */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Course List */}
-          <div className="lg:col-span-1 space-y-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Available Courses</h2>
-            {courses.map((course) => (
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Available Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {courses.map((course) => (
               <motion.div
                 key={course.id}
                 whileHover={{ scale: 1.02 }}
                 className={`p-6 rounded-xl cursor-pointer transition-all duration-200 ${
                   selectedCourse.id === course.id
-                    ? 'bg-indigo-600 text-white'
+                    ? 'bg-indigo-800 text-white'
                     : 'bg-white text-gray-900 hover:shadow-lg'
                 }`}
                 onClick={() => {setSelectedCourse(course);window.location.href="#maincourse"}}
                 
               >
+                <img className='p-1 rounded-xl transition-all duration-200' style={{marginBottom: 10,}} src={course.image}/>
                 <h3 className="text-xl font-semibold">{course.title}</h3>
                 <p className={`mt-2 ${
                   selectedCourse.id === course.id ? 'text-indigo-100' : 'text-gray-600'
@@ -1485,6 +1496,12 @@ const calculatewoPrice=(track)=>{
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* Course Selection */}
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
+          {/* Course List */}
+         
 
           {/* Course Details */}
           <div id="maincourse" className="lg:col-span-2 space-y-8">
@@ -1495,29 +1512,75 @@ const calculatewoPrice=(track)=>{
                 className="w-full h-64 object-cover rounded-xl mb-8"
               />
 
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
                 {selectedCourse.title}
               </h2>
 
               <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Choose Your Learning Track</h2>
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
-            {tracks.map((track) => (
-              <motion.div
-                key={track.name}
-                whileHover={{ scale: 1.02 }}
-                className={`p-1 py-2  md:p-6 rounded-xl cursor-pointer transition-all duration-200 ${
-                  selectedTrack.name === track.name
-                    ? 'bg-indigo-600 text-white'
-                    : 'bg-white text-gray-900 hover:shadow-lg'
-                }`}
-                onClick={() => setSelectedTrack(track)}
-              >
-                <h3 className="text-xs md:text-lg font-semibold ">{track.name} Track</h3>
-                
-              </motion.div>
-            ))}
+          <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">Choose Your Learning Track</h2>
+          <div className="w-4xl mx-auto px-2 py-5">
+        
+
+        {/* Program Details Section */}
+        <div className="mb-16">
+          <div className="bg-white rounded-xl  p-0">
+            <div className="flex justify-center mb-12">
+              <div className="inline-flex rounded-lg bg-gray-100 p-1">
+                {tracks.map((level) => (
+                  <button
+                    key={level.name}
+                    onClick={() => {setSelectedTrack(level)}}
+                    className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      selectedTrack === level
+                        ? 'bg-white shadow-md text-indigo-600'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    {level.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center mb-8">
+              {selectedTrack.icon}
+              <h2 className="text-2xl font-bold text-gray-900 mt-4 mb-2">
+                {selectedTrack.name}
+              </h2>
+              <p className="text-gray-600">
+                {selectedTrack.description}
+              </p>
+            </div>
+
+            <div className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">Program Features</h3>
+                <ul className="space-y-2">
+                  {selectedCourse.whyChoose[selectedTrack.name].map((feature, index) => (
+                    <li key={index} className="flex items-center text-gray-700">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <div className="p-6 bg-indigo-50 rounded-xl">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Program Details</h3>
+                  <div className="space-y-2">
+                    <p className="text-gray-700">
+                      <span className="font-medium">Duration:</span> {selectedTrack.duration}
+                    </p>
+                    <p className="text-gray-700">
+                      <span className="font-medium">Price:</span> {selectedTrack.price}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        </div>
         </div>
 
               {/* Skills */}
@@ -1534,20 +1597,20 @@ const calculatewoPrice=(track)=>{
                   ))}
                 </div>
               </div>
-              <button style={{margin:10}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-600 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-500 transition-colors duration-200">
+              <button style={{margin:10}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
               Enroll now
             </button>
               {/* Market Stats */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gray-50 p-6 rounded-xl">
-                  <div className="flex items-center gap-2 text-indigo-600 mb-2">
+                  <div className="flex items-center gap-2 text-indigo-800 mb-2">
                     <Briefcase className="w-5 h-5" />
                     <h4 className="font-semibold">Average Salary</h4>
                   </div>
                   <p className="text-2xl font-bold text-gray-900">{selectedCourse.avgSalary[selectedTrack.name]}</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-xl">
-                  <div className="flex items-center gap-2 text-indigo-600 mb-2">
+                  <div className="flex items-center gap-2 text-indigo-800 mb-2">
                     <Trophy className="w-5 h-5" />
                     <h4 className="font-semibold">Job Growth</h4>
                   </div>
@@ -1591,7 +1654,7 @@ const calculatewoPrice=(track)=>{
                       <div className="grid grid-cols-2 gap-2">
                         {module.topics.map((topic, topicIndex) => (
                           <div key={topicIndex} className="flex items-center gap-2">
-                            <ArrowRight className="w-4 h-4 text-indigo-600" />
+                            <ArrowRight className="w-4 h-4 text-indigo-800" />
                             <span className="text-sm">{topic}</span>
                           </div>
                         ))}
@@ -1620,7 +1683,7 @@ const calculatewoPrice=(track)=>{
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center gap-2">
-                          <GraduationCap className="w-4 h-4 text-indigo-600" />
+                          <GraduationCap className="w-4 h-4 text-indigo-800" />
                           <span className="text-sm">{mentor.experience} experience</span>
                         </div>
                         <div className="flex flex-wrap gap-2">

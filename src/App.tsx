@@ -12,14 +12,17 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CoursesPage from './pages/CoursesPage';
 import About from './pages/About';
+import Become from './components/Become';
+import TechGaints from './components/TechGaints';
 function HomePage() {
   return (
     <>
       <Hero />
-     
+     <TechGaints/>
       <WhyChooseUs />
       <Courses />
       <Testimonials />
+      <Become/>
       <Partners />
       <HowItWorks />
       <FAQ />
