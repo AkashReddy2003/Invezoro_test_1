@@ -62,7 +62,7 @@ const Navbar = () => {
                     </a>
                       )
                     })}
-                   
+                  
                   </div>
                 </div>
               </div>
@@ -81,6 +81,19 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+             {user.email?<a
+             
+                
+                href="/profile"  
+                
+                className={`${
+                  
+                     'text-gray-700 hover:text-amber-500'
+                } px-3 py-2 text-sm font-medium transition-colors duration-200`}
+              >
+                My Profile
+              </a>:""}
+              
             {!user.email?
           <button onClick={()=>setOpen(true)} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200 absolute right-10">
           Login / Register

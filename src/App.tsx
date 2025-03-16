@@ -14,6 +14,8 @@ import CoursesPage from './pages/CoursesPage';
 import About from './pages/About';
 import Become from './components/Become';
 import TechGaints from './components/TechGaints';
+import MyCoursePage from './pages/MyCoursePage';
+import ProfilePage from './pages/ProfilePage';
 function HomePage() {
   return (
     <>
@@ -41,6 +43,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/about" element={<About/>} />
+          <Route path="/mycourses" element={<MyCoursePage/>} />
+          <Route path="/profile" element={<ProfilePage/>} />
         </Routes>
         <Footer />
       </div>

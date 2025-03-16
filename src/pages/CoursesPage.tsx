@@ -36,7 +36,7 @@ const tracks = [
     name: 'Foundation',
     icon: <Lightbulb className="h-8 w-8 text-blue-500" />,
     description: 'Perfect for beginners starting their tech journey',
-    duration: '3 months',
+    duration: '1-2 months',
     price: 'Rs. 4999/-',
     features: [
       'Covers core concepts from scratch',
@@ -47,7 +47,7 @@ const tracks = [
     name: 'Proficient',
     icon: <Target className="h-8 w-8 text-purple-500" />,
     description: 'For those with basic knowledge seeking to advance',
-    duration: '4 months',
+    duration: '2 months',
     price: 'Rs. 6999/-',
     features: [
       'Delves deeper into specialized skills',
@@ -58,7 +58,7 @@ const tracks = [
     name: 'Master',
     icon: <Trophy className="h-8 w-8 text-yellow-500" />,
     description: 'Advanced learning for experienced professionals',
-    duration: '6 months',
+    duration: '3 months',
     price: 'Rs. 9999/-',
     features: [
       'Focuses on high-level applications and industry trends',
@@ -1467,7 +1467,7 @@ const calculatewoPrice=(track)=>{
   }
 }
   return (
-    <div className="pt-16 min-h-screen bg-gray-50">
+    <div className="pt-16 min-h-screen bg-gray-50 be-vietnam-pro-regular">
       {/* Course Header */}
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -1500,7 +1500,7 @@ const calculatewoPrice=(track)=>{
                 {selectedCourse.title}
               </h2>
 
-              <div className="mb-12">
+              <div className="mb-1">
           <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">Choose Your Learning Track</h2>
           <div className="w-4xl mx-auto px-2 py-5">
         
@@ -1516,7 +1516,7 @@ const calculatewoPrice=(track)=>{
                     onClick={() => {setSelectedTrack(level)}}
                     style={{width: window.screen.width>700?200:100,}}
                     className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      selectedTrack === level
+                      selectedTrack.name == level.name
                         ? 'bg-white shadow-md text-indigo-600'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
@@ -1567,11 +1567,11 @@ const calculatewoPrice=(track)=>{
         </div>
         </div>
         </div>
-        <div className='flex flex-row justify-center'>
+        <div className='flex flex-row justify-center mb-5'>
         <button style={{margin:10,width:window.screen.width>700?300:200}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
               Enroll now
             </button>
-            <button style={{margin:10,width:window.screen.width>700?300:200}}   className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
+            <button style={{margin:10,width:window.screen.width>700?300:200}}   className="bg-white text-indigo-800 shadow-lg px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
               Enquire
             </button>
         </div>

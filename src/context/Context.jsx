@@ -209,7 +209,7 @@ const ContextProvider = ({ children }) => {
         }
         //rzp_test_9nywBJKghDrpUL
         const options = {
-            key: 'rzp_live_ONIjVW5D1RX92l',
+            key: 'rzp_test_OeaUtHmwCrdWIA',
             amount: amount * 100,
             currency: 'INR',
             name: "INVEZORO",
@@ -260,7 +260,7 @@ const ContextProvider = ({ children }) => {
 
     const paymentFetch = async (a) => {
         const payid=a;
-    const razorpay = new Razorpay({ key_id: "rzp_live_ONIjVW5D1RX92l", key_secret:"e5XXqbrzgMyiumm1AgSpqDrG" });
+    const razorpay = new Razorpay({ key_id: "rzp_test_OeaUtHmwCrdWIA", key_secret:"CBXZNhTQ4T9r5QUiAmZKLKdz" });
     console.log(a)
     try{
       const payment=await razorpay.payments.fetch(payid);
