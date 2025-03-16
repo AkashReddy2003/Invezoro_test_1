@@ -1,17 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { GraduationCap, Award, AlignCenterVertical as Certificate, BookOpen, Clock, Calendar, Star, Trophy } from 'lucide-react';
-
+import us from '../assets/user.jpg'
+import { Context } from '../context/Context';
 function ProfilePage() {
   // Mock data - in a real app this would come from your backend
-  const user = {
-    name: "Sarah Johnson",
-    role: "Student",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
-    completedCourses: 12,
-    inProgressCourses: 3,
-    totalCertificates: 8,
-    badges: 15
-  };
+const {user}=useContext(Context);
+  
 
   const courses = [
     {
@@ -60,36 +54,69 @@ function ProfilePage() {
       credential: "DS-2024-045"
     }
   ];
+  const calculatedur=(track)=>{
+    if(track=="Foundation"){
+        return "1-2 months";
+    }else if (track=="Proficient"){
+        return "2 months";
+  }else{
+    return "3 months";
+  }
+}
+const calculatedurmon=(track)=>{
+    if(track=="Foundation"){
+        return 1.5;
+    }else if (track=="Proficient"){
+        return 2;
+  }else{
+    return 3;
+  }
+}
+function calculateProgress(startDateStr, track) {
+    // Convert startDateStr (e.g., "April_2025") to Date object
+    const [monthStr, yearStr] = startDateStr.split(/[\s_]+/);
+    const monthIndex = new Date(`${monthStr} 1, ${yearStr}`).getMonth(); // Get month index
+    const startDate = new Date(yearStr, monthIndex, 1); // Start at the beginning of the month
+    const durationMonths=calculatedurmon(track);
+    // Get the current date
+    const currentDate = new Date();
+
+    // Calculate elapsed time in months
+    const elapsedMonths = (currentDate.getFullYear() - startDate.getFullYear()) * 12 +
+                          (currentDate.getMonth() - startDate.getMonth());
+
+    // Calculate progress percentage
+    let progress = (elapsedMonths / durationMonths) * 100;
+    progress = Math.min(Math.max(progress, 0), 100); // Ensure progress is between 0 and 100
+    console.log(progress.toFixed(2))
+    return progress.toFixed(2) ;
+}
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-indigo-600 text-white py-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl font-bold">My Learning Dashboard</h1>
-        </div>
-      </div>
+      
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Profile Section */}
-        <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
+        <div className="bg-white rounded-xl shadow-sm p-6 mb-8 mt-10">
           <div className="flex items-center gap-6">
             <img 
-              src={user.avatar} 
+              src={us} 
               alt={user.name}
               className="w-24 h-24 rounded-full object-cover"
             />
             <div>
               <h2 className="text-2xl font-bold text-gray-800">{user.name}</h2>
-              <p className="text-gray-600">{user.role}</p>
+              <p className="text-gray-600">{user?.email}</p>
             </div>
             <div className="ml-auto grid grid-cols-2 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-600">{user.completedCourses}</div>
+                <div className="text-3xl font-bold text-indigo-600">{user?.completedCourses?user.completedCourses:0}</div>
                 <div className="text-sm text-gray-600">Completed Courses</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-indigo-600">{user.badges}</div>
+                <div className="text-3xl font-bold text-indigo-600">{user?.badges?user.badges:0}</div>
                 <div className="text-sm text-gray-600">Earned Badges</div>
               </div>
             </div>
@@ -107,26 +134,26 @@ function ProfilePage() {
                 </h3>
               </div>
               <div className="space-y-4">
-                {courses.map(course => (
-                  <div key={course.id} className="border rounded-lg p-4">
+                {user.courses?.map(course => (
+                  <div key={course?.id} className="border rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-semibold text-gray-800">{course.title}</h4>
+                      <h4 className="font-semibold text-gray-800">{course.course}</h4>
                       <span className={`px-2 py-1 rounded text-sm ${
                         course.completed 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-yellow-100 text-yellow-800'
                       }`}>
-                        {course.completed ? 'Completed' : 'In Progress'}
+                        {course?.completed ? 'Completed' : 'In Progress'}
                       </span>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-gray-600">
                       <span className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />
-                        {course.duration}
+                        {calculatedur(course.track)}
                       </span>
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
-                        Started: {course.startDate}
+                        Started: {course.batch}
                       </span>
                     </div>
                     {!course.completed && (
@@ -134,7 +161,7 @@ function ProfilePage() {
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div 
                             className="bg-indigo-600 h-2 rounded-full" 
-                            style={{ width: `${course.progress}%` }}
+                            style={{ width: `${calculateProgress(course.batch,course.track)}%` }}
                           ></div>
                         </div>
                       </div>
@@ -153,7 +180,7 @@ function ProfilePage() {
                 <h3 className="text-xl font-semibold">Earned Badges</h3>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {badges.map(badge => (
+                {user.badges?.map(badge => (
                   <div key={badge.id} className="flex flex-col items-center p-3 border rounded-lg">
                     <div className="text-indigo-600 mb-2">{badge.icon}</div>
                     <span className="text-sm text-center font-medium">{badge.name}</span>
@@ -169,7 +196,7 @@ function ProfilePage() {
                 <h3 className="text-xl font-semibold">Certificates</h3>
               </div>
               <div className="space-y-4">
-                {certificates.map(cert => (
+                {user.certificates?.map(cert => (
                   <div key={cert.id} className="border rounded-lg p-4">
                     <h4 className="font-semibold text-gray-800">{cert.name}</h4>
                     <div className="text-sm text-gray-600 mt-1">
