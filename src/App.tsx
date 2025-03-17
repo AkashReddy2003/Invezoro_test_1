@@ -16,6 +16,7 @@ import Become from './components/Become';
 import TechGaints from './components/TechGaints';
 import MyCoursePage from './pages/MyCoursePage';
 import ProfilePage from './pages/ProfilePage';
+import CouseList from './components/CouseList';
 function HomePage() {
   return (
     <>
@@ -26,6 +27,7 @@ function HomePage() {
       <Testimonials />
       
       <Partners />
+      <CouseList/>
       <HowItWorks />
       <Become/>
       <FAQ />

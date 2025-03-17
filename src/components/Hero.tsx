@@ -39,7 +39,7 @@ const Hero = () => {
           
         >
           <a
-            href="/courses"
+            href="#courselist"
             style={{backgroundColor:"#FFA637 "}}
             className="be-vietnam-pro-medium rounded-md  px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-all duration-300 flex items-center gap-2"
           >

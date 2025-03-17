@@ -12,6 +12,7 @@ import { Batches, courses, Programs } from '../data/cources';
 import { ToastContainer, toast } from 'react-toastify';
 import "../css/login.css"
 import Modalt from '../components/Modalt';
+import { ContactModal } from '../components/ContactForm';
 
 const Context = createContext();
 const auth = getAuth(app);
@@ -24,6 +25,7 @@ const ContextProvider = ({ children }) => {
     const [ti,setTi]=useState("terms")
     const [track, setTrack] = React.useState(Programs[0]);
     const [batch, setBatch] = React.useState(Batches[0]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     useEffect(()=>{
         
         let a= localStorage.getItem("user")
@@ -281,7 +283,7 @@ const ContextProvider = ({ children }) => {
     }
     }
     return (
-        <Context.Provider value={{ handleRazorpayScreen, user ,login,register,open,setOpen,logout,ti,setTi,setOpena,load,batch, setBatch,track, setTrack}}>
+        <Context.Provider value={{ handleRazorpayScreen, user ,login,register,open,setOpen,logout,ti,setTi,setOpena,load,batch, setBatch,track, setTrack,isModalOpen,setIsModalOpen}}>
             <ToastContainer/>
             {children}
             <Modal
@@ -299,6 +301,10 @@ const ContextProvider = ({ children }) => {
     
  <Modalt/>
 </Modal>
+<ContactModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       
         </Context.Provider>
     )

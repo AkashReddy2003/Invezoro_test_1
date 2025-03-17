@@ -1439,13 +1439,14 @@ export const courses = [
 
 const CoursesPage = () => {
   const location=useLocation();
-  const course=location.state.course;
-  const [selectedCourse, setSelectedCourse] = useState(course?course:courses[0]);
+  const course=location.state;
+  const [selectedCourse, setSelectedCourse] = useState(course.title?course:courses[0]);
   const [selectedTrack, setSelectedTrack] = useState(tracks[0]);
   const {handleRazorpayScreen}=useContext(Context);
   const [selectedLevel, setSelectedLevel] = useState('foundation');
   useEffect(()=>{
     setSelectedCourse(location.state.course)
+    console.log(location.state.course)
   },[location.state.course])
   const calculatePrice=(track)=>{
     if(track=="Foundation"){
@@ -1541,12 +1542,12 @@ const calculatewoPrice=(track)=>{
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-gray-900">Program Features</h3>
                 <ul className="space-y-2">
-                  {selectedCourse.whyChoose[selectedTrack.name].map((feature, index) => (
+                  {selectedCourse.whyChoose?selectedCourse.whyChoose[selectedTrack.name].map((feature, index) => (
                     <li key={index} className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
                       {feature}
                     </li>
-                  ))}
+                  )):""}
                 </ul>
               </div>
               <div className="space-y-4">
