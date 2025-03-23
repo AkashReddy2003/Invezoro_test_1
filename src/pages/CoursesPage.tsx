@@ -1468,6 +1468,7 @@ const calculatewoPrice=(track)=>{
       return 18999;
   }
 }
+const {isModalOpen,setIsModalOpen}=useContext(Context)
   return (
     <div className="pt-16 min-h-screen bg-gray-50 be-vietnam-pro-regular">
       {/* Course Header */}
@@ -1573,7 +1574,7 @@ const calculatewoPrice=(track)=>{
         <button style={{margin:10,width:window.screen.width>700?300:200}} onClick={()=>handleRazorpayScreen(calculatePrice(selectedTrack.name),"April_2025",selectedTrack.name,selectedCourse.title)}  className="bg-indigo-800 text-white px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
               Enroll now
             </button>
-            <button style={{margin:10,width:window.screen.width>700?300:200}}   className="bg-white text-indigo-800 shadow-lg px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
+            <button onClick={()=>setIsModalOpen(!isModalOpen)} style={{margin:10,width:window.screen.width>700?300:200}}   className="bg-white text-indigo-800 shadow-lg px-4 py-3 rounded-lg text-lg font-medium hover:bg-indigo-400 transition-colors duration-200">
               Enquire
             </button>
         </div>

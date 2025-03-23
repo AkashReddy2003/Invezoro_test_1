@@ -103,15 +103,7 @@ export const blogPosts: BlogPost[] = [
     category: "Career Growth",
     imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800"
   },
-  {
-    id: 10,
-    title: "The Impact of VR in Education",
-    excerpt: "How virtual reality is creating immersive learning experiences.",
-    author: "Sarah Johnson",
-    date: "March 6, 2024",
-    category: "EdTech Trends",
-    imageUrl: "https://images.unsplash.com/photo-1592478811341-4d9c69339e07?auto=format&fit=crop&w=800"
-  },
+ 
   {
     id: 11,
     title: "Smart Budgeting for College Students",

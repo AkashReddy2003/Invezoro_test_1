@@ -36,6 +36,8 @@ import { courses } from './CoursesPage';
 import susreel from "../assets/leaders/susreel.jpg"
 import nrus from "../assets/leaders/nrusimha.jpg"
 import akash from "../assets/leaders/akash.jpg"
+
+import ProfList from '../components/ProfList';
 const stats = [
   { icon: Users, label: 'Students Impacted', value: '10,000+' },
   { icon: Award, label: 'Certifications Awarded', value: '5,000+' },
@@ -536,57 +538,9 @@ function About() {
 
       {/* Partner Testimonials */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">What Our Partners Say</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="flex items-center mb-6">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="University Partner" 
-                className="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <div className="font-bold text-gray-900">Dr. James Wilson</div>
-                <div className="text-gray-500">Dean, Tech University</div>
-              </div>
-            </div>
-            <p className="text-gray-600 italic">
-              "INVEZORO's curriculum integration has significantly enhanced our students' practical skills and employability."
-            </p>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="flex items-center mb-6">
-              <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Corporate Partner" 
-                className="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <div className="font-bold text-gray-900">Sarah Chen</div>
-                <div className="text-gray-500">HR Director, TechCorp</div>
-              </div>
-            </div>
-            <p className="text-gray-600 italic">
-              "The talent pool from INVEZORO has consistently exceeded our expectations. Their graduates are job-ready from day one."
-            </p>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="flex items-center mb-6">
-              <img 
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-                alt="Mentor" 
-                className="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <div className="font-bold text-gray-900">Lisa Thompson</div>
-                <div className="text-gray-500">Senior Developer & Mentor</div>
-              </div>
-            </div>
-            <p className="text-gray-600 italic">
-              "Being a mentor at INVEZORO has been incredibly rewarding. The platform makes it easy to connect with and guide aspiring developers."
-            </p>
-          </div>
-        </div>
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Meet Our Mentors</h2>
+        
+          <ProfList/>
       </div>
 
       {/* Learning Process */}

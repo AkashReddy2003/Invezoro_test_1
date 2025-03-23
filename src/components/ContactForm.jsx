@@ -9,6 +9,7 @@ export function ContactModal({ isOpen, onClose }) {
     email: '',
     subject: '',
     message: '',
+    mobile:'',
   });
 
   if(!isOpen){
@@ -22,7 +23,7 @@ export function ContactModal({ isOpen, onClose }) {
     await new Promise(resolve => setTimeout(resolve, 1500));
     emailjs.sendForm('service_ax2doym', 'template_r6wwzds', e.target, 'wC7lrbfmCp0_esP5-');
     // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', subject: '', message: '',mobile:'' });
     setIsSubmitting(false);
     onClose();
   };
@@ -80,6 +81,21 @@ export function ContactModal({ isOpen, onClose }) {
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 placeholder="you@example.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-1">
+                Mobile
+              </label>
+              <input
+                type="mobile"
+                id="mobile"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder="1234567890"
               />
             </div>
             
