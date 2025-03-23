@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /profile
+Disallow: //post/:id
+Disallow: /blogs
+Disallow: /mycourses
+
+# Allow search engines to crawl everything else
+Allow: /about
+
+# Allow images to be indexed
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap (Replace with your actual sitemap URL)
+Sitemap: https://www.invezoro.in/sitemap.xml
