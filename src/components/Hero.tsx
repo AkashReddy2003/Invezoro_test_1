@@ -7,7 +7,7 @@ import hero from "../assets/hero.png"
 import tdots from "../assets/tdots.png"
 const Hero = () => {
   return (
-    <div className="relative   max-w-full" style={{backgroundColor:"#FFF2E1", borderBottomLeftRadius:window.screen.width>700?200:0,borderBottomRightRadius: window.screen.width>700?200:0,height:"87vh"}} >
+    <div className="relative   max-w-full" style={{backgroundColor:"#FFF2E1", height:"87vh"}} >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 pt-20 pb-16 text-center lg:pt-32">
         <div className='flex flex-row   relative w-full'>
           <div className='lg:w-6/12 relative'>
