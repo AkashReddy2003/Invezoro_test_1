@@ -1447,6 +1447,7 @@ const CoursesPage = () => {
   useEffect(()=>{
     setSelectedCourse(location.state.course)
     console.log(location.state.course)
+    window.scrollTo(0, 0)
   },[location.state.course])
   const calculatePrice=(track)=>{
     if(track=="Foundation"){

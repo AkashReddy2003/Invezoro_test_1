@@ -1,7 +1,9 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate=useNavigate();
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,10 +32,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/courses" className="text-gray-400 hover:text-white transition-colors duration-300">Courses</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Success Stories</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
+              <li><a onClick={()=>navigate("/")} href="#courselist" className="text-gray-400 hover:text-white transition-colors duration-300">Courses</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+              <li><a onClick={()=>navigate("/")} href="#testimonials" className="text-gray-400 hover:text-white transition-colors duration-300">Success Stories</a></li>
+              <li><a onClick={()=>navigate("/blogs")} href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Blog</a></li>
             </ul>
           </div>
           

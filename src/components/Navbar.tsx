@@ -93,6 +93,14 @@ const Navbar = () => {
               >
                 My Profile
               </a>:""}
+              <a
+              onClick={()=>navigate("/blogs")}
+               
+                
+                className= 'xt-gray-700 hover:text-amber-500 px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer'
+              >
+                Blogs
+              </a>
               
             {!user.email?
           <button onClick={()=>setOpen(true)} className="bg-amber-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-500 transition-colors duration-200 absolute right-10">
@@ -160,6 +168,14 @@ const Navbar = () => {
                 
               </a>
             ))}
+             <a
+              onClick={()=>navigate("/blogs")}
+               
+                
+                className= 'xt-gray-700 hover:text-amber-500 px-3 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer'
+              >
+                Blogs
+              </a>
             <div className="px-3 py-2">
               {!user.email?
              <button onClick={()=>setOpen(true)} className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg text-base font-medium hover:bg-indigo-500 transition-colors duration-200">

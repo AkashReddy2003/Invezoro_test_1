@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -17,7 +17,14 @@ import TechGaints from './components/TechGaints';
 import MyCoursePage from './pages/MyCoursePage';
 import ProfilePage from './pages/ProfilePage';
 import CouseList from './components/CouseList';
+import BlogList from './components/BlogList';
+import BlogPost from './components/BlogPost';
+
+
 function HomePage() {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   return (
     <>
       <Hero />
@@ -47,6 +54,8 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/mycourses" element={<MyCoursePage/>} />
           <Route path="/profile" element={<ProfilePage/>} />
+          <Route path='/blogs' element={<BlogList/>} />
+          <Route path="/post/:id" element={<BlogPost />} />
         </Routes>
         <Footer />
       </div>

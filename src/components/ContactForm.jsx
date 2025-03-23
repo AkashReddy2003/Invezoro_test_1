@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Send, Loader2 } from 'lucide-react';
-
+import emailjs from '@emailjs/browser';
 
 export function ContactModal({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,7 +20,7 @@ export function ContactModal({ isOpen, onClose }) {
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    emailjs.sendForm('service_ax2doym', 'template_r6wwzds', e.target, 'wC7lrbfmCp0_esP5-');
     // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
@@ -118,6 +118,7 @@ export function ContactModal({ isOpen, onClose }) {
             <button
               type="submit"
               disabled={isSubmitting}
+              
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (

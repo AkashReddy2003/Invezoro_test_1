@@ -1,17 +1,19 @@
 import React from 'react'
 import { courses } from '../pages/CoursesPage'
+import { useNavigate } from 'react-router-dom';
 
 export default function CouseList() {
+  const navigate=useNavigate();
   return (
      <section id="courselist" className="py-16 bg-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold">Featured Courses</h2>
                 <p className="mt-4 text-gray-600">Explore our most popular learning paths</p>
               </div>
               <div className="grid md:grid-cols-5 gap-8">
                 {courses.map((course) => (
-                  <div key={course.title} className="bg-white rounded-xl shadow-sm overflow-hidden group">
+                  <div onClick={()=>navigate("/courses",{state:{course:course}})}  key={course.title} className="bg-white rounded-xl shadow-sm overflow-hidden group cursor-pointer">
                     <div className="aspect-w-16 aspect-h-9">
                       <img
                         src={course.image}

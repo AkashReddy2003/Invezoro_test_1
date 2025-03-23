@@ -33,6 +33,9 @@ import {
 } from 'lucide-react';
 import { Context } from '../context/Context';
 import { courses } from './CoursesPage';
+import susreel from "../assets/leaders/susreel.jpg"
+import nrus from "../assets/leaders/nrusimha.jpg"
+import akash from "../assets/leaders/akash.jpg"
 const stats = [
   { icon: Users, label: 'Students Impacted', value: '10,000+' },
   { icon: Award, label: 'Certifications Awarded', value: '5,000+' },
@@ -43,22 +46,22 @@ const stats = [
 
 const leaders = [
   {
-    name: 'Sarah Johnson',
+    name: 'Susreel Reddy Somavarapu',
     role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
-    quote: "At Invezoro, we don't just deliver education—we transform learning experiences. Our mission is to make quality education accessible and engaging for everyone.",
+    image: susreel,
+    quote: "Education is not just about acquiring knowledge; it’s about unlocking real value. At Invezoro, we are redefining learning by ensuring that every student gets more than just a certificate they get skills that truly matter. We are here to bridge the gap between education and employability, helping students gain real-world expertise that translates into career success. Invezoro is not just an EdTech platform; it’s a revolution in value-driven learning.",
   },
   {
-    name: 'Michael Chen',
-    role: 'Chief Technology Officer',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400',
-    quote: 'Technology should enhance learning, not complicate it. We create intuitive educational solutions that empower both educators and students.',
+    name: 'Nrusimha Naidu Cheekiri',
+    role: 'COO & Founder',
+    image: nrus,
+    quote: 'Invezoro was born out of a deep understanding of what today’s learners need—education that directly impacts their future. We’ve designed our platform to eliminate the fluff and focus only on practical, high-impact learning. Every course is structured to give students industry-relevant experience, ensuring they don’t just learn but thrive in the real world. Our goal is simple: to make education an investment that always yields tangible returns.',
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Chief Education Officer',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
-    quote: 'Our curriculum is designed to inspire curiosity and foster a love for learning that lasts a lifetime.',
+    name: 'Akash Reddy Akepati',
+    role: 'CTO & CPO',
+    image: akash,
+    quote: 'The future of education is experiential, and technology is the driving force behind it. At Invezoro, we leverage cutting-edge tools, AI-driven learning, and immersive experiences to deliver courses that truly prepare students for industry demands. Our tech-first approach ensures that learning is not just effective but also engaging and personalized. We are committed to building an ecosystem where students gain skills that are recognized, respected, and rewarded in the job market.',
   },
 ];
 
@@ -344,7 +347,7 @@ function About() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {courses.slice(0,3).map((course) => (
-              <div key={course.title} className="bg-white rounded-xl shadow-sm overflow-hidden group">
+              <div onClick={()=>navigate("/courses",{state:{course:course}})}  key={course.title} className="bg-white rounded-xl shadow-sm overflow-hidden group">
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     src={course.image}
@@ -524,9 +527,9 @@ function About() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <button className="bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors">
+            <a onClick={()=>navigate("/")} href="#courselist" className="bg-indigo-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors">
               View All Resources
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -640,7 +643,7 @@ function About() {
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-80 object-cover"
                   />
                 </div>
                 <div className="p-6">
@@ -689,10 +692,10 @@ function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">Transform Your Educational Journey</h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-800 bg-white hover:bg-gray-50 transition-colors">
+            <a onClick={()=>navigate("/")} href="#courselist" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-indigo-800 bg-white hover:bg-gray-50 transition-colors">
               Start Learning
               <ChevronRight className="ml-2 w-5 h-5" />
-            </button>
+            </a>
             <button onClick={()=>setIsModalOpen(!isModalOpen)} className="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-blue-800 transition-colors">
               For Educators
               <ChevronRight className="ml-2 w-5 h-5" />
