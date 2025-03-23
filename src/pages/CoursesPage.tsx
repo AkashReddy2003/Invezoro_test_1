@@ -1448,6 +1448,7 @@ const CoursesPage = () => {
     setSelectedCourse(location.state.course)
     console.log(location.state.course)
     window.scrollTo(0, 0)
+    document.title= "Invezoro | Course overview";
   },[location.state.course])
   const calculatePrice=(track)=>{
     if(track=="Foundation"){

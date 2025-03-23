@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GraduationCap, Award, AlignCenterVertical as Certificate, BookOpen, Clock, Calendar, Star, Trophy } from 'lucide-react';
 import us from '../assets/user.jpg'
 import { Context } from '../context/Context';
 function ProfilePage() {
   // Mock data - in a real app this would come from your backend
 const {user}=useContext(Context);
-  
+  useEffect(()=>{
+    document.title="Invezoro | Profile"
+  })
 
   const courses = [
     {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Users,
@@ -59,6 +59,7 @@ const leaders = [
     image: nrus,
     quote: 'Invezoro was born out of a deep understanding of what today’s learners need—education that directly impacts their future. We’ve designed our platform to eliminate the fluff and focus only on practical, high-impact learning. Every course is structured to give students industry-relevant experience, ensuring they don’t just learn but thrive in the real world. Our goal is simple: to make education an investment that always yields tangible returns.',
   },
+  
  
 ];
 
@@ -229,6 +230,9 @@ const blogCategories = [
 function About() {
   const navigate = useNavigate();
   const {isModalOpen,setIsModalOpen}=useContext(Context)
+  useEffect(() => {
+    document.title = 'Invezoro - Our Mission: Bridging Learning & Innovation'
+  })
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}

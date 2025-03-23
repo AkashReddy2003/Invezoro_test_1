@@ -17,6 +17,7 @@ function BlogList() {
 
   useEffect(()=>{
     window.scrollTo(0,0);
+    document.title="Stay Updated: Industry Trends & Learning Tips by Invezoro";
   })
 
   return (

@@ -24,6 +24,7 @@ import BlogPost from './components/BlogPost';
 function HomePage() {
   useEffect(()=>{
     window.scrollTo(0,0);
+    document.title="Invezoro | Bridging Knowledge and Innovation";
   })
   return (
     <>
