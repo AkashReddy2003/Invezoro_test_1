@@ -14,12 +14,7 @@ const Footer = () => {
               Empowering careers through quality education and industry-relevant skills training.
             </p>
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                <Twitter className="w-5 h-5" />
-              </a>
+             
               <a href="https://in.linkedin.com/company/invezoro?trk=public_jobs_topcard-org-name" className="text-gray-400 hover:text-white transition-colors duration-300">
                 <Linkedin className="w-5 h-5" />
               </a>

@@ -35,7 +35,7 @@ import { Context } from '../context/Context';
 import { courses } from './CoursesPage';
 import susreel from "../assets/leaders/susreel.jpg"
 import nrus from "../assets/leaders/nrusimha.jpg"
-import akash from "../assets/leaders/akash.jpg"
+
 
 import ProfList from '../components/ProfList';
 const stats = [
@@ -59,12 +59,7 @@ const leaders = [
     image: nrus,
     quote: 'Invezoro was born out of a deep understanding of what today’s learners need—education that directly impacts their future. We’ve designed our platform to eliminate the fluff and focus only on practical, high-impact learning. Every course is structured to give students industry-relevant experience, ensuring they don’t just learn but thrive in the real world. Our goal is simple: to make education an investment that always yields tangible returns.',
   },
-  {
-    name: 'Akash Reddy Akepati',
-    role: 'CTO & CPO',
-    image: akash,
-    quote: 'The future of education is experiential, and technology is the driving force behind it. At Invezoro, we leverage cutting-edge tools, AI-driven learning, and immersive experiences to deliver courses that truly prepare students for industry demands. Our tech-first approach ensures that learning is not just effective but also engaging and personalized. We are committed to building an ecosystem where students gain skills that are recognized, respected, and rewarded in the job market.',
-  },
+ 
 ];
 
 const testimonials = [
@@ -590,14 +585,15 @@ function About() {
             <h2 className="text-3xl font-bold">Meet Our Leadership Team</h2>
             <p className="mt-4 text-gray-600">Passionate educators and innovators driving the future of learning</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {leaders.map((leader) => (
               <div key={leader.name} className="bg-white rounded-xl shadow-sm overflow-hidden group">
                 <div className="aspect-w-3 aspect-h-2">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-80 object-cover"
+                    className="w-full  object-contain"
+                    style={{height:300}}
                   />
                 </div>
                 <div className="p-6">

@@ -7,10 +7,10 @@ function BlogPost() {
   const { id } = useParams();
   const navigate = useNavigate();
   const currentPostId = Number(id);
-  const post = blogPosts.find(post => post.id === currentPostId);
+  const post = blogPosts.find((post: { id: number; }) => post.id === currentPostId);
 
   const { previousPost, nextPost } = useMemo(() => {
-    const currentIndex = blogPosts.findIndex(post => post.id === currentPostId);
+    const currentIndex = blogPosts.findIndex((post: { id: number; }) => post.id === currentPostId);
     return {
       previousPost: currentIndex > 0 ? blogPosts[currentIndex - 1] : null,
       nextPost: currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null
@@ -91,7 +91,7 @@ function BlogPost() {
       {/* Blog Post Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/blogs')}
           className="text-indigo-600 hover:text-indigo-700 mb-8 flex items-center"
         >
           ← Back to Blog
@@ -118,7 +118,7 @@ function BlogPost() {
           />
           <div className="ml-4">
             <p className="text-lg font-medium text-gray-900">{post.author}</p>
-            <p className="text-gray-500">Educational Technology Specialist</p>
+            <p className="text-gray-500">{post.description.intro}</p>
           </div>
         </div>
 
@@ -126,26 +126,23 @@ function BlogPost() {
           <p className="text-gray-600 mb-6">{post.excerpt}</p>
           
           {/* Sample content - in a real app, this would come from the API */}
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The Evolution of Educational Technology</h2>
+          {post.description.sections.map((a: { title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; content: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; key_points: any[]; })=>{
+            return(
+              <>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{a.title}</h2>
           <p className="text-gray-600 mb-6">
-            The landscape of educational technology has undergone significant transformation in recent years.
-            With the advent of artificial intelligence, machine learning, and advanced analytics, we're seeing
-            unprecedented opportunities for personalized learning experiences.
+            {a.content}
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Trends Shaping the Future</h2>
           <ul className="list-disc list-inside text-gray-600 mb-6">
-            <li className="mb-2">Artificial Intelligence in Education</li>
-            <li className="mb-2">Personalized Learning Paths</li>
-            <li className="mb-2">Virtual and Augmented Reality</li>
-            <li className="mb-2">Gamification of Learning</li>
+            {a.key_points.map((b: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined)=> <li className="mb-2">{b}</li>)}
+           
           </ul>
-
-          <p className="text-gray-600 mb-6">
-            These innovations are not just changing how we teach and learn; they're revolutionizing
-            the entire educational ecosystem. From K-12 to higher education and professional development,
-            technology is breaking down barriers and creating new possibilities.
-          </p>
+              </>
+            )
+          })}
+         
         </div>
 
         {/* Post Navigation */}
