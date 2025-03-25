@@ -35,8 +35,12 @@ import { Context } from '../context/Context';
 import { courses } from './CoursesPage';
 import susreel from "../assets/leaders/susreel.jpg"
 import nrus from "../assets/leaders/nrusimha.jpg"
-
-
+import i1 from "../assets/testimonials/1.jpg";
+import i2 from "../assets/testimonials/2.jpg";
+import i3 from "../assets/testimonials/3.jpg";
+import i4 from "../assets/testimonials/4.jpg";
+import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 import ProfList from '../components/ProfList';
 const stats = [
   { icon: Users, label: 'Students Impacted', value: '10,000+' },
@@ -65,23 +69,34 @@ const leaders = [
 
 const testimonials = [
   {
-    name: 'David Thompson',
-    company: 'International School of Excellence',
-    quote: 'Invezoro has revolutionized how we deliver online education to our students!',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
+      name: 'Harshith',
+      role: 'web developer at Google',
+      image: i4,
+      quote: 'Invezoro transformed my career. The practical approach and industry-focused curriculum helped me excel as a web developer at Google.',
+      company: 'Google'
   },
   {
-    name: 'Lisa Chang',
-    company: 'EdTech Academy',
-    quote: 'The learning analytics and personalized pathways have significantly improved student engagement.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
+      name: 'Yeshwanth',
+      role: 'Marketing Analyst',
+      image: i2,
+      quote: 'The mentorship and hands-on projects were invaluable. I went from a complete beginner to a confident marketing analyst at Asian Paints.',
+      company: 'Asian Paints'
   },
   {
-    name: 'James Wilson',
-    company: 'Global Learning Institute',
-    quote: 'Their adaptive learning platform has helped our students achieve remarkable progress.',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400',
+      name: 'Sreenij Reddy Konda',
+      role: 'Project Engineer',
+      image: i1,
+      quote: 'The career support team went above and beyond to help me secure my role as a project engineer at TCS.',
+      company: 'TCS(Tata Consultancy Services)'
   },
+  {
+      name: 'Sri Ram Aasam',
+      role: 'Associate Software Engineer at Accenture',
+      image: i3,
+      quote: 'Invezoro was a game-changer for me! The hands-on learning experience and industry-relevant content paved the way for me to become an associate software engineer at Accenture.',
+      company: 'Accenture'
+  }
+
 ];
 
 const features = [
@@ -416,43 +431,41 @@ function About() {
       {/* Success Stories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Transforming Lives, One Student at a Time</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <img 
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Student success story" 
-              className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-            />
-            <p className="text-gray-600 italic mb-4">
-              "INVEZORO helped me secure my dream job at a top tech company. The mentorship and mock interviews were invaluable."
-            </p>
-            <div className="font-semibold text-gray-900">Sarah Johnson</div>
-            <div className="text-sm text-gray-500">Software Engineer</div>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Student success story" 
-              className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-            />
-            <p className="text-gray-600 italic mb-4">
-              "The freelance marketplace helped me earn while learning. I've completed over 50 projects!"
-            </p>
-            <div className="font-semibold text-gray-900">Michael Chen</div>
-            <div className="text-sm text-gray-500">Freelance Developer</div>
-          </div>
-          <div className="bg-white rounded-xl shadow-lg p-6">
-            <img 
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" 
-              alt="Student success story" 
-              className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-            />
-            <p className="text-gray-600 italic mb-4">
-              "The regional language support made learning accessible. I'm now working at a multinational company!"
-            </p>
-            <div className="font-semibold text-gray-900">Priya Patel</div>
-            <div className="text-sm text-gray-500">Data Analyst</div>
-          </div>
+        <div className="grid md:grid-cols-4 gap-8">
+          
+          {testimonials.map((testimonial, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: index * 0.2 }}
+                        className="bg-white rounded-xl shadow-sm p-8 hover:shadow-lg transition-shadow duration-300"
+                      >
+                        <div className="flex items-center gap-4">
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-12 h-12 rounded-full object-cover"
+                          />
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
+                            <p className="text-sm text-gray-600">{testimonial.role}</p>
+                          </div>
+                        </div>
+                        <div className="mt-4 flex">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                          ))}
+                        </div>
+                        <blockquote className="mt-4">
+                          <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+                        </blockquote>
+                        <div className="mt-4 pt-4 border-t border-gray-100">
+                          <p className="text-sm text-gray-500">Now working at {testimonial.company}</p>
+                        </div>
+                      </motion.div>
+                    ))}
         </div>
       </div>
 
@@ -620,7 +633,7 @@ function About() {
             <h2 className="text-3xl font-bold">Success Stories</h2>
             <p className="mt-4 text-gray-600">What educators say about our platform</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {testimonials.map((testimonial) => (
               <div key={testimonial.name} className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="flex items-center space-x-4 mb-4">

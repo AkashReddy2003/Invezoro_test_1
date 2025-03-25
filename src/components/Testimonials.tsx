@@ -1,29 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import i1 from "../assets/testimonials/1.jpg";
+import i2 from "../assets/testimonials/2.jpg";
+import i3 from "../assets/testimonials/3.jpg";
+import i4 from "../assets/testimonials/4.jpg";
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'Software Engineer at Google',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-    quote: 'Invezoro transformed my career. The practical approach and industry-focused curriculum helped me land my dream job.',
-    company: 'Google'
+      name: 'Harshith',
+      role: 'web developer at Google',
+      image: i4,
+      quote: 'Invezoro transformed my career. The practical approach and industry-focused curriculum helped me excel as a web developer at Google.',
+      company: 'Google'
   },
   {
-    name: 'Michael Chen',
-    role: 'Full Stack Developer',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-    quote: 'The mentorship and hands-on projects were invaluable. I went from a complete beginner to a confident developer.',
-    company: 'Microsoft'
+      name: 'Yeshwanth',
+      role: 'Marketing Analyst',
+      image: i2,
+      quote: 'The mentorship and hands-on projects were invaluable. I went from a complete beginner to a confident marketing analyst at Asian Paints.',
+      company: 'Asian Paints'
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Data Scientist',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-    quote: 'The career support team went above and beyond to help me secure interviews with top companies.',
-    company: 'Amazon'
+      name: 'Sreenij Reddy Konda',
+      role: 'Project Engineer',
+      image: i1,
+      quote: 'The career support team went above and beyond to help me secure my role as a project engineer at TCS.',
+      company: 'TCS(Tata Consultancy Services)'
+  },
+  {
+      name: 'Sri Ram Aasam',
+      role: 'Associate Software Engineer at Accenture',
+      image: i3,
+      quote: 'Invezoro was a game-changer for me! The hands-on learning experience and industry-relevant content paved the way for me to become an associate software engineer at Accenture.',
+      company: 'Accenture'
   }
+
 ];
 
 const Testimonials = () => {
