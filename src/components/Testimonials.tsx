@@ -9,7 +9,7 @@ import i4 from "../assets/testimonials/4.jpg";
 const testimonials = [
   {
       name: 'Harshith',
-      role: 'web developer at Google',
+      role: 'Web Developer at Google',
       image: i4,
       quote: 'Invezoro transformed my career. The practical approach and industry-focused curriculum helped me excel as a web developer at Google.',
       company: 'Google'
