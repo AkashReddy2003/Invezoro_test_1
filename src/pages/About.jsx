@@ -209,7 +209,7 @@ const partnerTypes = [
 const impactMetrics = [
   { label: 'Job Placement Rate', value: '92%' },
   { label: 'Student Satisfaction', value: '96%' },
-  { label: 'Freelance Gigs Completed', value: '5000+' }
+  { label: 'Freelance Gigs Completed', value: '2000+' }
 ];
 
 const blogCategories = [
@@ -278,7 +278,7 @@ function About() {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-lg text-gray-600 mb-4">
-              Founded in 2023, INVEZORO was born out of a vision to bridge the gap between education and employability. We focus on underserved communities and regional language support to make quality education accessible to all.
+              Founded in 2024, INVEZORO was born out of a vision to bridge the gap between education and employability. We focus on underserved communities and regional language support to make quality education accessible to all.
             </p>
             <p className="text-lg text-gray-600 mb-6">
               Our mission is to empower students with top-tier mentorship, outcome-driven programs, and innovative learning methods that prepare them for the workforce.
