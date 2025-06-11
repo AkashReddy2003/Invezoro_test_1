@@ -5,7 +5,7 @@ import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } f
 import { app } from './FirebaseConfig';
 import Modal from '@mui/material/Modal';
 import Login from '../components/Login';
-import { getDatabase, ref, set ,get, push} from "firebase/database";
+import { getDatabase, ref, set ,get, push, child} from "firebase/database";
 import CloseIcon from '@mui/icons-material/Close';
 import Razorpay from 'razorpay';
 import { Batches, courses, Programs } from '../data/cources';
@@ -159,6 +159,7 @@ const ContextProvider = ({ children }) => {
             });
 
     }
+
 
 
 
